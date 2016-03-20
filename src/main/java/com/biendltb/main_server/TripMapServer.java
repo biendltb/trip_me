@@ -64,7 +64,7 @@ public class TripMapServer {
         ServletContextHandler contextHandler = new ServletContextHandler();
         contextHandler.setErrorHandler(null);
         contextHandler.setContextPath(CONTEXT_PATH);
-        contextHandler.addServlet(new ServletHolder(new DispatcherServlet(context)), MAPPING_URL);
+        contextHandler.addServlet(new ServletHolder("default", new DispatcherServlet(context)), MAPPING_URL);
         contextHandler.addEventListener(new ContextLoaderListener(context));
         contextHandler.setResourceBase(new ClassPathResource("webapp").getURI().toString());
         return contextHandler;

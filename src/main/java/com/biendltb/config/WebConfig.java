@@ -22,6 +22,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.core.env.Environment;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -40,6 +41,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
  */
 @Configuration
 @EnableWebMvc
+@Import({DefaultConfig.class})
 @ComponentScan(basePackages = {"com.biendltb.controller"})
 public class WebConfig extends WebMvcConfigurerAdapter{
     private static final Charset UTF8 = Charset.forName("UTF-8");
@@ -66,10 +68,10 @@ public class WebConfig extends WebMvcConfigurerAdapter{
         registry.addResourceHandler("/img/**").addResourceLocations("/img/").setCachePeriod(Integer.MAX_VALUE);
     }
     
-//    @Override
-//    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
-//        configurer.enable();
-//    }
+    @Override
+    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+        configurer.enable();
+    }
     
     @Bean
     public InternalResourceViewResolver getInternalResourceViewResolver() {
