@@ -1,0 +1,4 @@
+com/biendltb/config/WebConfig.class
+com/biendltb/controller/Home.class
+com/biendltb/main_server/TripMapServer.class
+com/biendltb/config/DefaultConfig.class

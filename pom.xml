@@ -13,7 +13,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jetty.version>9.3.8.v20160314</jetty.version>
         <spring.version>4.2.5.RELEASE</spring.version>
-        <servlet.version>2.5</servlet.version>
+        <servlet.version>3.1.0</servlet.version>
     </properties>
     
     <dependencies>
@@ -45,7 +45,28 @@
             <artifactId>spring-web</artifactId>
             <version>${spring.version}</version>
         </dependency>
-        
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>aopalliance</groupId>
+            <artifactId>aopalliance</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+
         <!-- JETTY DEPENDENCY -->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
@@ -62,11 +83,21 @@
             <artifactId>jetty-webapp</artifactId>
             <version>${jetty.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-http</artifactId>
+            <version>${jetty.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-io</artifactId>
+            <version>${jetty.version}</version>
+        </dependency>
         
         <!-- SERVLET DEPENDENCY -->
         <dependency>
             <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
+            <artifactId>javax.servlet-api</artifactId>
             <version>${servlet.version}</version>
         </dependency>
         
@@ -74,7 +105,7 @@
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
-            <version>1.1.3</version>
+            <version>1.2</version>
         </dependency>
     </dependencies>
 
